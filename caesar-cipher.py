@@ -23,9 +23,51 @@ def ceasar_cipher(text, shift):
         else:
             result += char 
 
-    print(result)
     return result 
+
+message = ceasar_cipher(text, shift)
+
+def decode_ceasar_cipher(message, shift): 
+
+    decoded_message = "" 
+
+    for char in message: 
+
+        if char.isupper():
+            shifted = chr((ord(char) - 65 - shift) % 26 + 65)
+            decoded_message += shifted
+        
+        elif char.islower():
+            shifted = chr((ord(char) - 97 - shift) % 26 + 97)
+            decoded_message += shifted
+
+        else:
+            decoded_message += char
+    
+    return decoded_message
+
+
 
 
 ceasar_cipher(text, shift)
+decode_ceasar_cipher(message, shift)
 
+# Test Case: 
+
+shift = 3
+text = "pumpkin spice latte"
+
+print("Original  :", text)
+
+message = ceasar_cipher(text, shift)
+print("Encrypted :", message)
+
+decoded_message = decode_ceasar_cipher(message, shift)
+print("Decrypted :", decoded_message)
+
+# Confirmation of Test Case Result: 
+
+if decoded_message == text:
+    print("\n✅ Success! The decryption worked correctly.")
+else:
+    print("\n❌ Something went wrong.")
