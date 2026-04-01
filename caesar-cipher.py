@@ -1,7 +1,7 @@
 shift = 3 
 text = "pumpkin spice latte"
 
-def ceasar_cipher(text, shift):
+def caesar_cipher(text, shift):
 
     result = "" 
 
@@ -25,9 +25,9 @@ def ceasar_cipher(text, shift):
 
     return result 
 
-message = ceasar_cipher(text, shift)
+message = caesar_cipher(text, shift)
 
-def decode_ceasar_cipher(message, shift): 
+def decode_caesar_cipher(message, shift): 
 
     decoded_message = "" 
 
@@ -49,8 +49,8 @@ def decode_ceasar_cipher(message, shift):
 
 
 
-ceasar_cipher(text, shift)
-decode_ceasar_cipher(message, shift)
+caesar_cipher(text, shift)
+decode_caesar_cipher(message, shift)
 
 # Test Case: 
 
@@ -59,10 +59,10 @@ text = "pumpkin spice latte"
 
 print("Original  :", text)
 
-message = ceasar_cipher(text, shift)
+message = caesar_cipher(text, shift)
 print("Encrypted :", message)
 
-decoded_message = decode_ceasar_cipher(message, shift)
+decoded_message = decode_caesar_cipher(message, shift)
 print("Decrypted :", decoded_message)
 
 # Confirmation of Test Case Result: 
